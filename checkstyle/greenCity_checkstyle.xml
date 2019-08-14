@@ -6,16 +6,11 @@
 <!--
     Checkstyle configuration that checks the Google coding conventions from Google Java Style
     that can be found at https://google.github.io/styleguide/javaguide.html
-
     Checkstyle is very configurable. Be sure to read the documentation at
     http://checkstyle.sf.net (or in your downloaded distribution).
-
     To completely disable a check, just comment it out or delete it from the file.
-
     Authors: Max Vetrenko, Ruslan Diachenko, Roman Ivanov.
-
     The only difference from google_checks is a identity size, here it's 4.
-    Length of abbreviation - 100.
  -->
 
 <module name="Checker">
@@ -53,7 +48,7 @@
             <property name="max" value="100"/>
             <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
         </module>
-        <!--        <module name="AvoidStarImport"/>-->
+        <module name="AvoidStarImport"/>
         <module name="OneTopLevelClass"/>
         <module name="NoLineWrap"/>
         <module name="EmptyBlock">
@@ -195,7 +190,7 @@
         </module>
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
-            <property name="allowedAbbreviationLength" value="100"/>
+            <property name="allowedAbbreviationLength" value="1"/>
         </module>
         <module name="OverloadMethodsDeclarationOrder"/>
         <module name="VariableDeclarationUsageDistance"/>
