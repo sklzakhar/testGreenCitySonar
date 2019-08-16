@@ -1,0 +1,22 @@
+language: java
+dist: trusty
+sudo: true
+install: true
+
+addons:
+  sonarcloud:
+    organization: "?????SoftServe" #Put name of Organization from SonarCloud Acount
+    token:
+      secure: "?????????????????????????" #Put SoftServe token from SonarCloud Acount
+jdk:
+  - oraclejdk8
+
+script:
+  - mvn clean install sonar:sonar
+
+cache:
+  directories:
+    - '$HOME/.m2/repository' #work without this, maybe delete
+    - '$HOME/.sonar/cache'  #work without this, maybe delete
+
+
