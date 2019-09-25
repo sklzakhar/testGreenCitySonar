@@ -1,9 +1,12 @@
 package greencity.controller;
 
+import greencity.constant.HttpStatuses;
 import greencity.dto.favoriteplace.FavoritePlaceDto;
 import greencity.dto.favoriteplace.FavoritePlaceShowDto;
 import greencity.dto.place.PlaceByBoundsDto;
 import greencity.service.FavoritePlaceService;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import java.security.Principal;
 import java.util.List;
 import javax.validation.Valid;
@@ -16,6 +19,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/favorite_place/")
 @AllArgsConstructor
+@ApiResponses(value = {
+    @ApiResponse(code = 200, message = HttpStatuses.OK),
+    @ApiResponse(code = 400, message = HttpStatuses.BAD_REQUEST),
+    @ApiResponse(code = 403, message = HttpStatuses.FORBIDDEN),
+})
 public class FavoritePlaceController {
     private final FavoritePlaceService favoritePlaceService;
 
