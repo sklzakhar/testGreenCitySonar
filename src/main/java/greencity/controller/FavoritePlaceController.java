@@ -80,7 +80,7 @@ public class FavoritePlaceController {
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> deleteByUserEmailAndFavoriteIdOrPlaceId(@NotNull @PathVariable Long id,
-                                                       Principal principal) {
+                                                                        Principal principal) {
         return ResponseEntity.status(HttpStatus.OK).body(favoritePlaceService
             .deleteByUserEmailAndFavoriteIdOrPlaceId(id, principal.getName()));
     }
