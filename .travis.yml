@@ -1,0 +1,15 @@
+language: java
+dist: trusty
+
+addons:
+    sonarcloud:
+        organization: "sklzakhar"
+        token:
+            secure: "fd527d0bacdb2185538102d0e155306e1f21dd0f"
+            
+jdk:
+  - oraclejdk8
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=sklzakhar_testGreenCitySonar -DskipTests=true
